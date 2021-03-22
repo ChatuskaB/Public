@@ -1,0 +1,326 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CarParkingSystem.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Car Parking</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link rel="stylesheet" href="~/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="~/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="~/plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="~/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="~/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/plugins/summernote/summernote-bs4.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+
+    <!-- Sweetalert -->
+    <script src="Scripts/sweetalert.min.js"></script>
+    <!-- JQuerry -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js"></script>
+    <!-- DataTables -->
+    <script src="../../plugins/datatables/jquery.dataTables.js"></script>
+    <script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+
+
+    <style>
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1200px;
+            }
+        }
+
+        html {
+            font-size: unset;
+        }
+
+        .navbar {
+            margin-bottom: 0px;
+        }
+
+        .navbar-nav {
+            padding-bottom: 12px;
+        }
+
+        .input-group {
+            width: auto;
+        }
+
+        .brand-link {
+            padding: 19px;
+        }
+
+        .brand-image {
+            margin-left: 0.1px;
+        }
+
+        .navbar {
+            position: fixed;
+            right: 0;
+            left: 0;
+        }
+
+        body {
+            padding-top: 1px !important;
+            padding-bottom: 1px !important;
+        }
+
+        .contentCustomer {
+            padding: 50px;
+            padding-top: 100px;
+        }
+    </style>
+
+</head>
+
+
+<body class="hold-transition sidebar-mini">
+
+    <%--start of wrapper --%>
+    <div class="wrapper">
+
+
+
+        <section>
+            <!-- Navbar -->
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                <!-- Left navbar links -->
+                <ul class="navbar-nav leftnav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="#" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline-block">
+                        <a href="#" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Right navbar links -->
+                <ul class="navbar-nav ml-auto">
+                    <%: DateTime.Now %>
+                  &nbsp; &nbsp;
+                 
+                    <a href="login">Logout </a>
+                </ul>
+            </nav>
+            <!-- /.navbar -->
+        </section>
+
+        <section>
+            <aside class="main-sidebar sidebar-dark-primary elevation-4">
+                <!-- Brand Logo -->
+                <a href="#" class="brand-link">
+                    <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                    <span class="brand-text font-weight-light">CARPARKING</span>
+                </a>
+
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Sidebar user panel (optional) -->
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                        <div class="image">
+                            <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        </div>
+                        <div class="info">
+                            <a href="#" class="d-block">Car Parking System</a>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Menu -->
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Dashboard
+                
+                                    </p>
+                                </a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a href="Company" class="nav-link">
+                                    <i class="nav-icon fas fa-home"></i>
+                                    <p>
+                                        Company
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="Customer" class="nav-link">
+                                    <i class="nav-icon fas fa-user-friends"></i>
+                                    <p>
+                                        Users 
+                                    </p>
+                                </a>
+                            </li>
+
+
+
+                            <li class="nav-item has-treeview">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-file-alt"></i>
+                                    <p>
+                                        Reports
+                                        <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="DailyReports" class="nav-link">
+                                            <i class="fas fa-scroll nav-icon"></i>
+                                            <p>Daily Transaction Report</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="LoginDetailReport" class="nav-link">
+                                            <i class="fas fa-scroll nav-icon"></i>
+                                            <p>Login Detail Report</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="SettlewiseReport" class="nav-link">
+                                            <i class="fas fa-scroll nav-icon"></i>
+                                            <p>Settlewise Report</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="DurationOfStay" class="nav-link">
+                                            <i class="fas fa-scroll nav-icon"></i>
+                                            <p>Duration of Stay Report</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="GracePeriodReport" class="nav-link">
+                                            <i class="fas fa-scroll nav-icon"></i>
+                                            <p>Grace Period Report</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- /.sidebar-menu -->
+                </div>
+                <!-- /.sidebar -->
+            </aside>
+
+
+
+
+        </section>
+
+        <section>
+
+
+
+            <div class="content-wrapper contentCustomer">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </section>
+
+
+
+        <section>
+            <footer class="main-footer">
+                <!-- To the right -->
+                <div class="float-right d-none d-sm-inline">
+                    Brings you the Best
+   
+                </div>
+                <!-- Default to the left -->
+                <strong>Copyright &copy;  <%: DateTime.Now.Year %> <a href="https://www.elogiclanka.com/">Elogic Lanka</a>.</strong> All rights reserved.
+ 
+            </footer>
+
+        </section>
+
+    </div>
+    <%--End of wrapper --%>
+
+
+    <script> src = "~/Scripts/WebForms / WebForms.js" </script>
+    <script> src = "~/Scripts/WebForms / WebUIValidation.js" </script>
+    <script> src = "~/Scripts/WebForms / MenuStandards.js" </script>
+    <script> src = "~/Scripts/WebForms / GridView.js" </script>
+    <script> src = "~/Scripts/WebForms / DetailsView.js" </script>
+    <script> src = "~/Scripts/WebForms / TreeView.js" </script>
+    <script> src = "~/Scripts/WebForms / WebParts.js" </script>
+    <script> src = "~/Scripts/WebForms / Focus.js" </script>
+
+
+
+    <script>
+
+        $(function () {
+
+            if ((sessionStorage.getItem("username") == "0") && (sessionStorage.getItem("password") == "0")) {
+
+                location.href = "./Login";
+            }
+
+        });
+
+        $(window).on("load", function () {
+
+            // add active class and stay opened when selected 
+            var url = window.location;
+
+            // for sidebar menu entirely but not cover treeview
+            $('ul.nav-sidebar a').filter(function () {
+                return this.href == url;
+            }).addClass('active');
+
+            // for treeview
+            $('ul.nav-treeview a').filter(function () {
+                return this.href == url;
+            }).parentsUntil(".nav-sidebar > .nav-treeview").addClass('menu-open').prev('a').addClass('active');
+
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>
